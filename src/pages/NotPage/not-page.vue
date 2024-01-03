@@ -1,9 +1,9 @@
 <!--
- * @FilePath: \vue3x_template\src\pages\NotPage\404.vue
+ * @FilePath: \vue3x_template\src\pages\NotPage\not-page.vue
  * @Author: maggot-code
  * @Date: 2022-11-21 15:16:40
  * @LastEditors: zhangxin
- * @LastEditTime: 2023-05-05 17:05:27
+ * @LastEditTime: 2024-01-03 10:42:02
  * @Description:
 -->
 <script setup>
@@ -15,10 +15,10 @@ function gobackHome() {
 
 <template>
     <div class="not-page">
-        <img src="https://element-plus-admin.cn/assets/404-1759fece.svg" alt="" />
+        <img src="@/assets/images/404.svg" alt="" />
         <div class="not-page-text">抱歉，您访问的页面不存在。</div>
         <div class="not-page-btn">
-            <el-button size="mini" type="primary" @click="gobackHome">返回首页</el-button>
+            <el-button size="small" type="primary" @click="gobackHome">返回首页</el-button>
         </div>
     </div>
 </template>

@@ -1,9 +1,9 @@
 /*
- * @FilePath: \vue2.7_admin_template-master\vite.config.js
+ * @FilePath: \vue3x_template\vite.config.js
  * @Author: maggot-code
  * @Date: 2022-11-21 14:19:59
  * @LastEditors: zhangxin
- * @LastEditTime: 2023-11-16 17:38:57
+ * @LastEditTime: 2024-01-03 10:25:34
  * @Description:
  */
 import { defineConfig, splitVendorChunkPlugin, loadEnv } from "vite";
@@ -14,6 +14,9 @@ import viteCompression from "vite-plugin-compression";
 import autoImport from "unplugin-auto-import/vite";
 import vueComponents from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 import lodashImport from "./plugins/lodash";
 import componentImport from "./plugins/component";
@@ -75,7 +78,19 @@ export default defineConfig(({ mode }) => {
                 resolvers: [ElementPlusResolver()]
             }),
             vueComponents({
-                resolvers: [ElementPlusResolver()],
+                resolvers: [
+                    ElementPlusResolver(),
+                    IconsResolver({
+                        prefix: 'Icon',
+                        enabledCollections: ['ep'],
+                    })
+                ],
+                dts: true,
+            }),
+            Icons({
+                autoInstall: true,
+                compiler: "vue3",
+                scale: 1.0,
             }),
             viteCompression({
                 verbose: true,
@@ -87,7 +102,7 @@ export default defineConfig(({ mode }) => {
             }),
             visualizer({
                 filename: "./node_modules/.cache/visualizer/stats.html",
-                open: false,
+                open: true,
                 gzipSize: true,
                 brotliSize: true,
             }),

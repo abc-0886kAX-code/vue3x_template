@@ -24,6 +24,7 @@
         "vue-router": "^4.2.1"
     },
     "devDependencies": {
+        "@iconify-json/ep": "^1.1.14",
         "@types/lodash-es": "^4.17.6",
         "@types/uuid": "^8.3.4",
         "@vitejs/plugin-vue": "^4.1.0",
@@ -31,6 +32,7 @@
         "rollup-plugin-visualizer": "^5.8.3",
         "sass": "^1.56.1",
         "unplugin-auto-import": "^0.11.4",
+        "unplugin-icons": "^0.14.1",
         "unplugin-vue-components": "^0.22.9",
         "vite": "4.3.2",
         "vite-plugin-compression": "^0.5.1",
