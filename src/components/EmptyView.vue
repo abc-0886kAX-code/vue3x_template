@@ -8,15 +8,15 @@
 -->
 <script setup>
 const props = defineProps({
-    desc: {
-        type: String,
-        default: "抱歉，访问资源不存在",
-    },
-});
+  desc: {
+    type: String,
+    default: '抱歉，访问资源不存在',
+  },
+})
 </script>
 
 <template>
-    <el-empty class="furnace-empty" :description="desc"></el-empty>
+  <el-empty class="furnace-empty" :description="desc" />
 </template>
 
 <style scoped lang="scss"></style>

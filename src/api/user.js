@@ -6,13 +6,13 @@
  * @LastEditTime: 2023-08-04 10:13:23
  * @Description:
  */
-import request, { formData } from '@/service/request';
+import request, { formData } from '@/service/request'
 
 // 明湖钓台获取登录接口
-export const login = data => {
-    return request({
-        url: `/QrWater/PublicMind/FeedBack/getFeedbackAnswerList`,
-        method: 'POST',
-        data: formData(data),
-    });
-};
+export function login(data) {
+  return request({
+    url: `/QrWater/PublicMind/FeedBack/getFeedbackAnswerList`,
+    method: 'POST',
+    data: formData(data),
+  })
+}
