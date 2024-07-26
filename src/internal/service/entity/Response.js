@@ -14,7 +14,7 @@ import { useBooleanState } from '@/hooks/ref/useRefState'
 
 // const progress = useProgress();
 
-export function ResponseEntity(props, defineResult) {
+export function ResponseEntity(props) {
   const config = ConfigEntity(props)
   const result = useShallowObject(NormResult)
   const startup = useBooleanState(false)

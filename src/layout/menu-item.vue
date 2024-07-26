@@ -1,9 +1,9 @@
 <!--
- * @FilePath: \vue2.7_admin_template-master\src\layout\menu-item.vue
+ * @FilePath: \vue3x_template\src\layout\menu-item.vue
  * @Author: zhangxin
  * @Date: 2023-11-16 15:34:41
- * @LastEditors: zhangxin
- * @LastEditTime: 2023-11-16 16:52:33
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-07-26 15:03:21
  * @Description:
 -->
 <script setup>
@@ -12,7 +12,7 @@ import { useMenu } from '@/hooks/useMenu.js'
 const props = defineProps({
   cell: {
     type: Object,
-    default: {},
+    default: ()=>{},
   },
 })
 const menu = useMenu()

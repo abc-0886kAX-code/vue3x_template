@@ -22,7 +22,7 @@ const Storage = {
       }
       return JSON.parse(localStorage.getItem(key))
     }
-    catch (err) {
+    catch {
       return null
     }
   },
@@ -48,7 +48,7 @@ const Session = {
       }
       return JSON.parse(sessionStorage.getItem(key))
     }
-    catch (err) {
+    catch {
       return null
     }
   },
@@ -69,7 +69,7 @@ const tempStorage = {
         return null
       }
       // 如果没有设置时间或者为NaN,则设置默认时间为24小时
-      if (!time || isNaN(time)) {
+      if (!time || Number.isNaN(time)) {
         time = 60
       }
       // 过期时间的毫秒数
@@ -77,7 +77,7 @@ const tempStorage = {
       // 将时间和值一起存储
       localStorage.setItem(key, JSON.stringify({ data: value, time: endTime }))
     }
-    catch (e) {
+    catch {
       return null
     }
   },

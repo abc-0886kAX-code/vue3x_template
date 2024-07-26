@@ -1,9 +1,9 @@
 /*
- * @FilePath: /Furnace/src/hooks/service/useMapper.js
+ * @FilePath: \vue3x_template\src\hooks\service\useMapper.js
  * @Author: maggot-code
  * @Date: 2022-12-04 04:42:21
- * @LastEditors: maggot-code
- * @LastEditTime: 2022-12-04 05:34:40
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-07-26 15:01:48
  * @Description:
  */
 import { transArray } from '~/shared/trans'
@@ -14,7 +14,7 @@ export function useMapper(mapper) {
     const dict = transArray(item)
     if (dict.length < 2) {
       // TODO warning log
-      return
+      return null
     };
 
     const [keys] = dict

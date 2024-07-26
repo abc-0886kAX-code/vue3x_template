@@ -1,9 +1,9 @@
 /*
- * @FilePath: \明湖数字大厅\src\hooks\useDate.js
+ * @FilePath: \vue3x_template\src\hooks\useDate.js
  * @Author: zhangxin
  * @Date: 2023-03-04 10:32:20
- * @LastEditors: zhangxin
- * @LastEditTime: 2023-03-10 07:10:35
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-07-26 15:01:57
  * @Description:
  */
 import dayjs from 'dayjs'
@@ -82,7 +82,6 @@ export function useDateContainmmBefore(eh) {
     .second(0)
     // 结束时间，当前时间的小时数
   const end = now.hour(now.hour()).second(0)
-  console.log(end)
   return useDate(start, end)
 }
 

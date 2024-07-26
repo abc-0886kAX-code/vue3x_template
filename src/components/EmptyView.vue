@@ -1,13 +1,13 @@
 <!--
- * @FilePath: \明湖数字大厅\src\components\EmptyView.vue
+ * @FilePath: \vue3x_template\src\components\EmptyView.vue
  * @Author: maggot-code
  * @Date: 2022-11-26 16:03:34
- * @LastEditors: zhangxin
- * @LastEditTime: 2023-03-02 15:59:48
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-07-26 14:59:38
  * @Description:
 -->
 <script setup>
-const props = defineProps({
+defineProps({
   desc: {
     type: String,
     default: '抱歉，访问资源不存在',

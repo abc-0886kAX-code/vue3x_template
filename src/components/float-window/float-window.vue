@@ -1,8 +1,8 @@
 <!--
  * @Author: zhangxin
  * @Date: 2022-04-29 09:22:25
- * @LastEditors: zhangxin
- * @LastEditTime: 2023-03-09 15:20:39
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-07-26 15:01:07
  * @Description: file content
 -->
 <script setup>
@@ -42,8 +42,8 @@ const style = computed(() => {
 
 <template>
   <div v-show="visable" ref="floatRefs" class="float-window" :style="style">
-    <template v-for="item in content">
-      <div :key="item.field" class="float-window-item">
+    <template v-for="item in content" :key="item.field">
+      <div  class="float-window-item">
         <p class="float-window-item-label">
           {{ item.label }}：
         </p>

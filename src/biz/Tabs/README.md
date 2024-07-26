@@ -1,3 +1,11 @@
+<!--
+ * @FilePath: \vue3x_template\src\biz\Tabs\README.md
+ * @Author: abc-0886kAX-code
+ * @Date: 2024-01-22 17:41:48
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-07-26 14:58:49
+ * @Description:
+-->
 ```vue
 <script setup>
 import { useTabs } from '@/biz/Tabs'
@@ -26,14 +34,15 @@ const { active, component, dataset, setup, update } = useTabs({
 <template>
   <div class="debug">
     <div class="debug-head">
-      <template v-for="(entity) in dataset">
+      <template v-for="(entity, index) in dataset">
         <el-button
-          v-if="entity.keyword === active" type="success"
+          v-if="entity.keyword === active"
+          :key="index" type="success"
           @click="update(entity)"
         >
           {{ entity.label }}
         </el-button>
-        <el-button v-else type="primary" @click="update(entity)">
+        <el-button v-else :key="index" type="primary" @click="update(entity)">
           {{ entity.label }}
         </el-button>
       </template>

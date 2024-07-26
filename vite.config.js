@@ -22,8 +22,7 @@ import lodashImport from './plugins/lodash'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const { VITE_ASSETS } = loadEnv(mode, process.cwd())
-  console.log(mode, VITE_ASSETS)
+  const { VITE_ASSETS } = loadEnv(mode, process.cwd()) // eslint-disable-line  node/prefer-global/process
   return {
     base: VITE_ASSETS,
     clearScreen: true,

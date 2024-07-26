@@ -1,9 +1,9 @@
 /*
- * @FilePath: \vue3x_template-master\src\store\usePermission.js
+ * @FilePath: \vue3x_template\src\store\usePermission.js
  * @Author: zhangxin
  * @Date: 2023-08-03 16:59:38
- * @LastEditors: zhangxin
- * @LastEditTime: 2023-08-04 09:52:58
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-07-26 15:04:43
  * @Description: 待开发...
  */
 import { defineStore } from 'pinia'
@@ -20,7 +20,7 @@ export const usePermission = defineStore(Namespace, {
   }),
 
   getters: {
-    getAddRoutes(state) {
+    getAddRoutes() {
       return this.addRoutes
     },
   },

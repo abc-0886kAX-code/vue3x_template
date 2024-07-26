@@ -1,8 +1,8 @@
 <!--
  * @Author: yjl
  * @Date: 2021-04-30 17:36:00
- * @LastEditors: zhangxin
- * @LastEditTime: 2022-11-30 13:15:42
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-07-26 15:01:38
  * @Description: 天气接口: https://www.yiketianqi.com
 -->
 <script>
@@ -63,7 +63,6 @@ export default {
             tempStorage.set('weather', data, EXPIRATION_TIME)
           }
         })
-        .catch((err) => { })
     },
   },
 }

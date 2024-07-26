@@ -1,9 +1,9 @@
 <!--
- * @FilePath: \vue2.7_admin_template-master\src\layout\Home.vue
+ * @FilePath: \vue3x_template\src\layout\Home.vue
  * @Author: zhangxin
  * @Date: 2023-04-12 13:14:28
- * @LastEditors: zhangxin
- * @LastEditTime: 2023-11-16 17:22:35
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2024-07-26 15:03:09
  * @Description:
 -->
 <script setup>
@@ -13,11 +13,9 @@ import { routes } from '@/router/useRouter.js'
 
 import Weather from '@/components/weather/weather.vue'
 import { useUserStore } from '@/store/useUser'
-import { usePermissionStore } from '@/store/usePermission'
 
 const { proxy } = getCurrentInstance()
 const user = useUserStore()
-const permission = usePermissionStore()
 const menu = useMenu()
 const defaultActive = computed(() => {
   return proxy.$route.name
@@ -26,9 +24,11 @@ const defaultActive = computed(() => {
 const menuList = computed(() => {
   return routes.find(item => item.name === 'layout').children
 })
-function handleUser(params) { }
+function handleUser() { }
 function handleCommand(command) {
-  command === 'userLogout' && userLogout()
+  if(command === 'userLogout'){
+    userLogout()
+  }
 }
 function userLogout() {
   user.emptyUserInfo()
