@@ -41,5 +41,5 @@ function tabClick(entity) {
 </template>
 
 <style scoped lang="scss">
-@import '@/assets/style/dialog-tab.scss';
+@use '@/assets/style/dialog-tab.scss';
 </style>

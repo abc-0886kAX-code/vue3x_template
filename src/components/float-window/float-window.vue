@@ -56,5 +56,5 @@ const style = computed(() => {
 </template>
 
 <style scoped lang="scss">
-@import './float-window.scss';
+@use './float-window.scss';
 </style>

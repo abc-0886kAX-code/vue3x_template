@@ -1,12 +1,12 @@
 /*
- * @FilePath: \数字大厅\src\middleware\token.request.js
+ * @FilePath: /vue3x_template/src/middleware/token.request.js
  * @Author: maggot-code
  * @Date: 2022-11-01 10:42:20
- * @LastEditors: zhangxin
- * @LastEditTime: 2023-03-21 17:34:38
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2025-05-09 13:48:26
  * @Description:
  */
-import { Message, MessageBox } from 'element-ui'
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { uuid } from '@/shared/uuid.js'
 import { useRouter } from '@/router/useRouter'
 import { useUserStore } from '@/store/useUser'
@@ -28,7 +28,7 @@ function response(response) {
   const res = response.data
   if (res.code != 200) {
     if (res.code == 203) {
-      MessageBox.confirm(res.msg, '提示', {
+      ElMessageBox.confirm(res.msg, '提示', {
         type: 'warning',
         showCancelButton: false,
         confirmButtonText: '确定',
@@ -40,11 +40,11 @@ function response(response) {
       })
     }
     else {
-      Message({
+      ElMessage({
         message: res.msg || '请求出错，请重试',
         type: 'error',
         duration: 1500,
-        onClose: () => {},
+        onClose: () => { },
       })
     }
     return Promise.reject(new Error(res.msg || 'Error'))

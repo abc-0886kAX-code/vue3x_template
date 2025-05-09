@@ -1,9 +1,9 @@
 /*
- * @FilePath: \vue3x_template\vite.config.js
+ * @FilePath: /水文感知数据监视平台/vite.config.js
  * @Author: maggot-code
  * @Date: 2022-11-21 14:19:59
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2024-07-25 17:59:08
+ * @LastEditTime: 2025-05-08 17:23:59
  * @Description:
  */
 import { defineConfig, loadEnv, splitVendorChunkPlugin } from 'vite'
@@ -22,7 +22,7 @@ import lodashImport from './plugins/lodash'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  const { VITE_ASSETS } = loadEnv(mode, process.cwd()) // eslint-disable-line  node/prefer-global/process
+  const { VITE_ASSETS, VITE_API_BASE_URL_PRE, VITE_API_BASE_URL } = loadEnv(mode, process.cwd()) // eslint-disable-line  node/prefer-global/process
   return {
     base: VITE_ASSETS,
     clearScreen: true,
@@ -32,15 +32,18 @@ export default defineConfig(({ mode }) => {
         overlay: true,
       },
       proxy: {
-        '/api': {
-          target: 'http://127.0.0.1:8899/',
+        [VITE_API_BASE_URL_PRE]: {
+          target: VITE_API_BASE_URL,
           changeOrigin: true,
-          rewrite: path => path.replace(/^\/api/, '/api'),
+          rewrite: path => path.replace(/^\/[VITE_API_BASE_URL_PRE]/, `/${VITE_API_BASE_URL_PRE}`), // eslint-disable-line  regexp/no-dupe-characters-character-class
         },
-        '/QrWater': {
-          target: 'https://www.xxanyu.cn/',
-          changeOrigin: true,
-          rewrite: path => path.replace(/^\/QrWater/, '/QrWater'),
+      },
+    },
+    // 设置scss的api类型为modern-compiler
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern',
         },
       },
     },
@@ -119,7 +122,7 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       minify: false,
-      target: 'es2015',
+      target: 'es2020',
       sourcemap: mode === 'production' ? false : 'hidden',
       chunkSizeWarningLimit: 500,
       assetsInlineLimit: 10000,

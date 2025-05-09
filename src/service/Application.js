@@ -1,17 +1,19 @@
 /*
- * @FilePath: \vue2.7_Mars3D_template\src\service\Application.js
+ * @FilePath: /vue3x_template/src/service/Application.js
  * @Author: maggot-code
  * @Date: 2022-11-24 10:05:30
- * @LastEditors: zhangxin
- * @LastEditTime: 2023-04-12 11:21:03
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2025-05-09 13:48:07
  * @Description:
  */
 import axios from 'axios'
 import { defineService } from '~/service'
 import { useTokenMiddleware } from '@/middleware/token.request'
 
+const baseURL = import.meta.env.VITE_API_BASE_URL_PRE
+
 const define = axios.create({
-  baseURL: '',
+  baseURL,
   timeout: import.meta.env.DEV ? 0 : 30000,
 })
 
