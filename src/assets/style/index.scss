@@ -1,6 +1,6 @@
-@import './scroll.scss';
-@import './dialog.scss';
-@import './point.scss';
+@use './scroll.scss';
+@use './dialog.scss';
+@use './point.scss';
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;

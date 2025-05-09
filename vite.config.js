@@ -1,9 +1,9 @@
 /*
- * @FilePath: /水文感知数据监视平台/vite.config.js
+ * @FilePath: /vue3x_template/vite.config.js
  * @Author: maggot-code
  * @Date: 2022-11-21 14:19:59
  * @LastEditors: abc-0886kAX-code
- * @LastEditTime: 2025-05-08 17:23:59
+ * @LastEditTime: 2025-05-09 17:25:25
  * @Description:
  */
 import { defineConfig, loadEnv, splitVendorChunkPlugin } from 'vite'
@@ -39,11 +39,11 @@ export default defineConfig(({ mode }) => {
         },
       },
     },
-    // 设置scss的api类型为modern-compiler
     css: {
       preprocessorOptions: {
         scss: {
-          api: 'modern',
+          // api: 'modern-compiler',
+          silenceDeprecations: ['legacy-js-api'],
         },
       },
     },
