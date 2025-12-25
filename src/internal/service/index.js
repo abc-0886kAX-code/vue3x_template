@@ -1,9 +1,9 @@
 /*
- * @FilePath: \明湖大屏\src\internal\service\index.js
+ * @FilePath: /vue3x_template/src/internal/service/index.js
  * @Author: maggot-code
  * @Date: 2022-12-04 00:42:53
- * @LastEditors: maggot-code
- * @LastEditTime: 2022-12-28 09:24:23
+ * @LastEditors: abc-0886kAX-code
+ * @LastEditTime: 2025-12-25 14:09:11
  * @Description:
  */
 import { ResponseEntity } from '~/service/entity/Response'
@@ -28,7 +28,12 @@ export function defineService(tofetch, props) {
         return trans(response)
       })
       .catch((error) => {
-        return error
+        // return error
+        /*
+         为什么从return error 改为 throw error
+         原因：接收时如果使用 try catch中的catch不会捕获到return出去的error
+        */
+        throw error
       })
       .finally(() => {
         entity.toEnd()
